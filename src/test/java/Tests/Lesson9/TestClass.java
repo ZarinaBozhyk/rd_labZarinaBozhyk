@@ -30,7 +30,7 @@ public class TestClass {
     @Test
     public void firstTest() {
         //String s= FirstTest.class.getResource("chromedriver.exe").getPath();
-        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
 //        if (driverName.equals("chrome")) {
 //            driver = new ChromeDriver();
