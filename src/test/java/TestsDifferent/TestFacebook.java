@@ -37,8 +37,8 @@ public class TestFacebook {
 
         }
 
-        //TODO: add error message verification, as mentioned in "Step 10" of your task.
-        //TODO: add driver quit()
+        //TODO: add error message verification, as mentioned in "Step 10" of the task.
+        //TODO: add browser close
 
         // Great!
     }
