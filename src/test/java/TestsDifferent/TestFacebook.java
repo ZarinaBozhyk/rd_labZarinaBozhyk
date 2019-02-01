@@ -14,6 +14,7 @@ public class TestFacebook {
         System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
 
+        // Looking forward... Usage of waiters - good! :)
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://facebook.com/");
@@ -21,6 +22,7 @@ public class TestFacebook {
 
         login.sendKeys("11111");
 
+        // a lot of empty lines
 
         WebElement password = driver.findElement(By.xpath("//input[@id=\"pass\"]"));
         password.sendKeys("1111");
@@ -35,7 +37,10 @@ public class TestFacebook {
 
         }
 
+        //TODO: add error message verification, as mentioned in "Step 10" of your task.
+        //TODO: add driver quit()
 
+        // Great!
     }
 
 }
