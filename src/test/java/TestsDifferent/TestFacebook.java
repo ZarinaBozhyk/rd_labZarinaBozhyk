@@ -34,7 +34,7 @@ public class TestFacebook {
             loginButton.click();
 
         }
-
+        driver.quit();
 
     }
 
