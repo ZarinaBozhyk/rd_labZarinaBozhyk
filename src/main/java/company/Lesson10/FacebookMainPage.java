@@ -6,14 +6,12 @@ import org.openqa.selenium.WebElement;
 
 public class FacebookMainPage {
     private WebDriver driver;
-
     public FacebookMainPage(WebDriver driver) {
         this.driver = driver;
     }
-
     private By email = By.xpath("//input[@id='email']");
     private By password = By.xpath("//input[@id='pass']");
-    private By button = By.xpath("//input[@id='u_0_2']");
+    private By button = By.xpath("//input[@value='Увійти']");
 
     public FacebookMainPage userEmailType (String mail){
         driver.findElement(email).sendKeys(mail);
@@ -27,15 +25,4 @@ public class FacebookMainPage {
         driver.findElement(button).click();
         return new FacebookLoginPage(driver);
     }
-
-
-
-
-
-
-
-
-
-
-
-}
+    }

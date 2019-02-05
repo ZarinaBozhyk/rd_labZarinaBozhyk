@@ -15,7 +15,8 @@ public class MainFacebookClass {
         driver.get("https://www.google.com");
         GooglePage googlePage = new GooglePage(driver);
         googlePage.inputText("Facebook");
-        googlePage.clickSubmitButton();
+        googlePage.submit();
+        googlePage.clickFacebookLink();
         FacebookMainPage facebookMainPage = new FacebookMainPage(driver);
         facebookMainPage.userEmailType("badlogin");
         facebookMainPage.userPassType("badpassword");
@@ -24,7 +25,6 @@ public class MainFacebookClass {
         facebookLoginPage.printText();
         facebookLoginPage.compareText();
         facebookLoginPage.close();
-
 
     }
 }
