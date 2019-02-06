@@ -2,6 +2,8 @@ package company.Lesson10;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class GooglePage {
     private WebDriver driver;
@@ -9,27 +11,22 @@ public class GooglePage {
     public GooglePage(WebDriver driver) {
         this.driver = driver;
     }
-    private By googleSearchField = By.xpath("//input[@class='gLFyf gsfi']");
-    private By facebookLink = By.xpath("//h3[text()='Facebook — увійдіть або зареєструйтеся']");
-   // private By googleSearchButton = By.xpath("//button[@class='Tg7LZd']");
+    @FindBy(xpath ="//input[@class='gLFyf gsfi']" )
+    private WebElement googleSearchField;
+    @FindBy(xpath = "//h3[text()='Facebook — увійдіть або зареєструйтеся']")
+    private WebElement facebookLink;
 
     public GooglePage inputText(String text) {
-        driver.findElement(googleSearchField).sendKeys("Facebook");
+        googleSearchField.sendKeys("Facebook");
         return this;
     }
-
     public FacebookMainPage clickFacebookLink(){
-        driver.findElement(facebookLink).click();
+        facebookLink.click();
         return new FacebookMainPage(driver);
     }
 
     public  FacebookLoginPage submit(){
-        driver.findElement(googleSearchField).submit();
+        googleSearchField.submit();
         return new FacebookLoginPage(driver);
     }
-//    public FacebookMainPage clickSubmitButton(){
-//        driver.findElement(googleSearchButton).click();
-//        return new FacebookMainPage(driver);
-//
-//    }
 }

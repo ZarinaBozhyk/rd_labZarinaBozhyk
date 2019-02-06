@@ -3,26 +3,31 @@ package company.Lesson10;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class FacebookMainPage {
     private WebDriver driver;
     public FacebookMainPage(WebDriver driver) {
         this.driver = driver;
     }
-    private By email = By.xpath("//input[@id='email']");
-    private By password = By.xpath("//input[@id='pass']");
-    private By button = By.xpath("//input[@value='Увійти']");
+    @FindBy(xpath ="//input[@id='email']" )
+    private WebElement email;
+    @FindBy(xpath = "//input[@id='pass']")
+    private WebElement password;
+    @FindBy(xpath = "//input[@value='Увійти']")
+    private WebElement button;
 
     public FacebookMainPage userEmailType (String mail){
-        driver.findElement(email).sendKeys(mail);
+        email.sendKeys(mail);
         return this;
     }
     public FacebookMainPage userPassType (String pass){
-        driver.findElement(password).sendKeys(pass);
+        password.sendKeys(pass);
         return this;
     }
+
     public FacebookLoginPage clickButton(){
-        driver.findElement(button).click();
+        button.click();
         return new FacebookLoginPage(driver);
     }
     }
