@@ -16,6 +16,7 @@ public class GoogleTest {
 
     @Before
     public void setUp() {
+        // TODO: please use relative path. I don't have "C:\Users\Zarina_Bozhyk\IdeaProjects\" on my machine =)
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Zarina_Bozhyk\\IdeaProjects\\rd_lab\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
