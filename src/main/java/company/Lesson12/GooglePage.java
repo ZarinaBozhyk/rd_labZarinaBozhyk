@@ -10,7 +10,7 @@ public class GooglePage {
         this.driver = driver;
     }
 
-    public String checkURL(){
+    public String getURL(){
         String url = driver.getCurrentUrl();
         return url;
     }

@@ -26,7 +26,7 @@ public class GoogleTest {
     @Test
     public void ckeckCurrentUrl(){
         GooglePage googlePage = new GooglePage(driver);
-        String currentUrl = googlePage.checkURL();
+        String currentUrl = googlePage.getURL();
         Assert.assertEquals("https://www.google.com/", currentUrl);
 
     }
