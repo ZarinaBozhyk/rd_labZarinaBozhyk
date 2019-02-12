@@ -32,15 +32,7 @@ public class TestClass {
         //String s= FirstTest.class.getResource("chromedriver.exe").getPath();
         System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
-//        if (driverName.equals("chrome")) {
-//            driver = new ChromeDriver();
-//        } else{
-//            driver = new FirefoxDriver();
-//        }
-        //((FirefoxDriver) driver).installExtension(new File("sdvsdv").toPath());
         driver.get("https://www.google.com");
-        // driver.findElement(By.xpath("//input[@title = 'Поиск']]")).sendKeys("Under pressure");
-        // By findEl = driver.findElementsByXPath("//input[@id="q"]");
         WebElement findEl = driver.findElement(By.xpath("//input[@name=\"q\"]"));
         findEl.sendKeys("Under pressure");
         findEl.submit();
@@ -48,12 +40,7 @@ public class TestClass {
         driver.get(ytlink);
         WebElement fullSc = driver.findElement(By.xpath("//div/button[@title=\"Full screen (f)\"]"));
         fullSc.click();
-        //WebElement findF2 = driver.findElement(By.xpath("//div[@cite class="iUh30"]"));
-
-
-        // WebElement findEl2 = driver.findElement(By.className("LC20lb"));
-        // findEl2.submit();
-
+      driver.quit();
 
     }
 

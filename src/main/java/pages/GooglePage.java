@@ -1,6 +1,7 @@
-package company.Lesson10;
+package pages;
 
-import org.openqa.selenium.By;
+import company.Lesson10.FacebookLoginPage;
+import company.Lesson10.FacebookMainPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,8 +26,14 @@ public class GooglePage {
         return new FacebookMainPage(driver);
     }
 
-    public  FacebookLoginPage submit(){
+    public FacebookLoginPage submit(){
         googleSearchField.submit();
         return new FacebookLoginPage(driver);
+
+    }
+    public String getURL(){
+        String url = driver.getCurrentUrl();
+        return url;
     }
 }
+

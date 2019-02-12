@@ -1,7 +1,6 @@
-package Lesson12;
+package company.Lesson12;
 
-
-import driver.Driver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -16,20 +15,19 @@ public class GoogleTest {
     private WebDriver driver;
     private GooglePage googlePage;
 
+    public static void setupClass() {
+        WebDriverManager.chromedriver().setup();
+    }
+
     @Before
-    public void setUp(){
-        driver = new Driver().getDriver();
+    public void setUp() {
+        //System.setProperty("webdriver.chrome.driver",GoogleTest.class.getResource("chromedriver.exe").getPath());
+        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://www.google.com");
     }
-//
-//    @Test
-//    public void checkLogoTitle() {
-//        GooglePage googlePage = new GooglePage(driver);
-//        String logo = googlePage.checkLogo();
-//        Assert.assertEquals("Google", logo);
-//    }
+
     @Test
     public void ckeckCurrentUrl(){
         GooglePage googlePage = new GooglePage(driver);
