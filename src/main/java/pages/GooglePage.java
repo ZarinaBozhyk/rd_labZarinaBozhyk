@@ -1,7 +1,7 @@
 package pages;
 
-import company.Lesson10.FacebookLoginPage;
-import company.Lesson10.FacebookMainPage;
+import company.lesson10.FacebookLoginPage;
+import company.lesson10.FacebookMainPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
